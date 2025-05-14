@@ -14,17 +14,17 @@ public:
 
     void addEdge(int u, int v, int weight) {
         adj[u].push_back({v, weight});
-        adj[v].push_back({u, weight}); // Undirected graph
+        adj[v].push_back({u, weight}); 
     }
 
     void primMST() {
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
-        vector<int> key(V, INF);     // Weight to connect to MST
-        vector<int> parent(V, -1);   // To store MST
-        vector<bool> inMST(V, false);// To track included vertices
+        vector<int> key(V, INF);     
+        vector<int> parent(V, -1);   
+        vector<bool> inMST(V, false);
 
-        pq.push({0, 0});  // (key, vertex)
+        pq.push({0, 0});  
         key[0] = 0;
 
         while (!pq.empty()) {
